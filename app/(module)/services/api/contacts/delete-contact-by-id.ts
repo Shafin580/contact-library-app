@@ -2,30 +2,22 @@ import { getAPIResponse } from "@utils/helpers/misc"
 import { redirect } from "@utils/helpers/redirect"
 import { PATHS } from "app/(module)/router.config"
 
-export interface ContactListAPIProps {
-  id: number
-  name: string
-  email: string
-  phone_number: string | null
-  address: string | null
-}
-
 /**
- * Fetches the contact list from API
+ * delete contact
  */
-export const getContactDetails = async ({id, token}:{id: string | number, token: string}) => {
+export const deleteContact = async ({ id, token }: { id: string | number; token: string }) => {
   try {
-    const { results, status_code } = await getAPIResponse(
+    const { results, status_code, message } = await getAPIResponse(
       process.env.NEXT_PUBLIC_SITE_URL!,
-      PATHS.CONTACT.DETAILS(id).root,
+      PATHS.CONTACT.DELETE(id).root,
       token,
-      "GET"
+      "DELETE"
     )
 
     if (status_code === 200) {
-      return results as ContactListAPIProps
+      return { status_code: status_code, message: message }
     } else
-      throw Error("Error fetching contact details", {
+      throw Error("Error deleting contact", {
         cause: status_code,
       })
   } catch (err) {

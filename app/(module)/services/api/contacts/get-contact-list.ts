@@ -1,52 +1,38 @@
-import { formatDateString } from "@utils/helpers/misc"
-import request, { gql } from "graphql-request"
-import { QUERY } from "query.config"
-import { PATHS } from "router.config"
+import { getAPIResponse } from "@utils/helpers/misc"
+import { redirect } from "@utils/helpers/redirect"
+import { PATHS } from "app/(module)/router.config"
 
-// + Function To Get Impact Story List
-export const getImpactStoryList = async (
-  pageSize: number = 10,
-  endCursor: string = "",
-  startCursor: string = "",
-  searchText: string = ""
-) => {
-  const data: any = await request(
-    String(process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_API_URL),
-    gql`
-      ${PATHS.WP_MODULE.IMPACT_STORY.LIST.query(pageSize, endCursor, startCursor, searchText).root}
-    `
-  )
 
-  const tempData: Array<any> = data["impactStories"] != null ? data["impactStories"]["nodes"] : []
-  const formattedData: Array<ImpactStoryProps> = []
+export interface ContactListAPIProps {
+  id: number
+  name: string
+  email: string
+  phone_number: string | null
+  address: string | null
+}
 
-  tempData.length > 0 &&
-    tempData.forEach((element: any) => {
-      const temp: ImpactStoryProps = {
-        id: element.databaseId,
-        title: element.impactStoryFields.title,
-        description: element.impactStoryFields.description,
-        imageUrl: element.impactStoryFields.image.node.sourceUrl,
-        postDate: formatDateString(String(element.date)),
-      }
-      formattedData.push(temp)
-    })
 
-  const result = {
-    data: formattedData,
-    pageInfo: {
-      startCursor: data["impactStories"] != null ? String(data["impactStories"]["pageInfo"].startCursor) : "",
-      endCursor: data["impactStories"] != null ? String(data["impactStories"]["pageInfo"].endCursor) : "",
-      hasNextPage:
-        data["impactStories"] != null ? (data["impactStories"]["pageInfo"].hasNextPage as boolean) : false,
-      hasPreviousPage:
-        data["impactStories"] != null
-          ? (data["impactStories"]["pageInfo"].hasPreviousPage as boolean)
-          : false,
-    },
+/**
+ * Fetches the contact list from API
+ */
+export const getContactList = async (token: string) => {
+  try {
+    const { results, status_code } = await getAPIResponse(
+      process.env.NEXT_PUBLIC_SITE_URL!,
+      PATHS.CONTACT.LIST.root,
+      token,
+      "GET"
+    )
+
+    if (status_code === 200) {
+      return results as ContactListAPIProps[]
+    } else
+      throw Error("Error fetching contact list", {
+        cause: status_code,
+      })
+  } catch (err) {
+    console.error(err)
+
+    return redirect((err as Error).cause as number) // tsq does not take undefine i.e. return undefined / return void / empty
   }
-
-  console.log("Impact Story List Data:", result)
-
-  return result
 }

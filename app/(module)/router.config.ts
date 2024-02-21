@@ -25,14 +25,17 @@ export const PATHS = {
     LIST: {
       root: `contacts/list` as const,
     },
+    DETAILS: (id: string | number) => {
+      return { root: `contacts/${id}` as const }
+    },
     ADD: {
       root: `contacts/add` as const,
     },
     DELETE: (id: string | number) => {
-      return { root: `contacts/delete/${id}` }
+      return { root: `contacts/delete/${id}` as const }
     },
     UPDATE: (id: number) => {
-      return { root: `contacts/update/${id}` }
+      return { root: `contacts/update/${id}` as const }
     },
   },
 }
