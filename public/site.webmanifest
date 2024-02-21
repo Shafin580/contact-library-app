@@ -1,0 +1,16 @@
+{
+  "name": "The Asia Foundation",
+  "short_name": "TAF",
+  "description": "Women's Climate Coalition in Bangladesh",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00804B",
+  "icons": [
+    {
+      "src": "/img/logo.jpg",
+      "sizes": "15662x2721",
+      "type": "image/jpeg"
+    }
+  ]
+}
