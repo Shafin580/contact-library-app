@@ -18,8 +18,6 @@ export default function LoginForm() {
   const [errorResponse, setErrorResponse] = useState("")
   const [showUnauthorizedModal, setShowUnauthorizedModal] = useState(false)
 
-  const [isLoading, setIsLoading] = useState(false)
-
   const { updateLoadingStatus, login } = useContext(AppContext)
 
   // + Login Validate Function
@@ -66,8 +64,6 @@ export default function LoginForm() {
           loginMutationQuery.mutate({ email: e.text, password: e.password })
         }}
         btnText="Sign In"
-        btnHasSpinner={isLoading}
-        isFetchingAPI={isLoading}
         textInputLabel="Email"
         loginFormLabel={
           <div className="rounded-md">

@@ -75,7 +75,7 @@ const ContactDeleteModal = ({
           modalAlign="center"
         >
           <h5 className="!mb-28 text-center">
-            {"Your all correspondent data will be removed. Do you want to remove?"}
+            {"Are you sure you want to delete this contact?"}
           </h5>
           <div className="grid grid-cols-2 gap-x-20">
             <Button

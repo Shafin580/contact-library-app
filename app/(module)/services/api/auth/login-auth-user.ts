@@ -13,7 +13,7 @@ export interface LoginUserParams {
 export const loginAuthUser = async ({ email, password }: LoginUserParams) => {
   try {
     const { status_code, user, token, message } = await getAPIResponse(
-      String(process.env.NEXT_PUBLIC_SITE_URL),
+      process.env.NEXT_PUBLIC_SITE_URL!,
       PATHS.LOGIN.root,
       "",
       "POST",

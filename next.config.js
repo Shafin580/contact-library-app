@@ -2,7 +2,7 @@
 
 const path = require("path")
 const isProd = process.env.NODE_ENV === "production"
-const apiURL = "http://localhost:8000/"
+const apiURL = String(process.env.API_URL)
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "false",
   // openAnalyzer: false,

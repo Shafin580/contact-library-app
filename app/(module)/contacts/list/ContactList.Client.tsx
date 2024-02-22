@@ -9,6 +9,8 @@ import TablePagy from "app/components/table/TablePagy"
 import { useContext, useState } from "react"
 import ContactCreateUpdateModal from "./Components/ContactCreateUpdateModal"
 import ContactDeleteModal from "./Components/ContactDeleteModal"
+import { QUERY_KEYS } from "app/(module)/query.config"
+import Button from "app/components/global/Button"
 
 const ContactList = () => {
   const [showCreateModal, setShowCreateModal] = useState(false)
@@ -22,6 +24,7 @@ const ContactList = () => {
   return (
     <div>
       <h3 className="text-center text-primary">Contact List</h3>
+      <Button btnText="Add New Contact" variant="primary" clicked={() => {setShowCreateModal(true)}} />
       {token != null && (
         <TablePagy
           // onRowClick={(e) => {
@@ -33,6 +36,7 @@ const ContactList = () => {
           totalRowName="totalRows"
           pageSize={30}
           rowPerPageOptions={[30, 40, 50]}
+          queryParameters={{ queryKey: [QUERY_KEYS.CONTACT.LIST.key] }}
           columnHeadersLabel={[
             {
               accessorKey: "name",
