@@ -16,3 +16,9 @@ or
 `pnpm dev`
 
 The project should be running now.
+
+Existing User Credentials:
+
+email: auth@email.com
+
+password: testAuth123
