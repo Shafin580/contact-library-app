@@ -1,8 +1,7 @@
 import { getAPIResponse } from "@utils/helpers/misc"
-import { redirect } from "@utils/helpers/redirect"
 import { PATHS } from "app/(module)/router.config"
 
-interface CreateAuthUserParams {
+export interface CreateAuthUserParams {
   email: string
   password: string
 }
@@ -28,6 +27,6 @@ export const createAuthUser = async ({ email, password }: CreateAuthUserParams) 
   } catch (err) {
     console.error(err)
 
-    return redirect((err as Error).cause as number) // tsq does not take undefine i.e. return undefined / return void / empty
+    return { status_code: 500, message: "Server Error" } // tsq does not take undefine i.e. return undefined / return void / empty
   }
 }

@@ -22,6 +22,7 @@ export const config = {
  */
 
 const EXCLUDE_ROUTES = [
+  "/register",
   // * next.js api route
   "/api",
   // * next.js static routes & static files

@@ -19,23 +19,23 @@ export const LINKS = {
  */
 
 export const PATHS = {
-  LOGIN: { root: `auth/login` as const },
-  REGISTER: { root: `auth/register` as const },
+  LOGIN: { root: `/auth/login` as const },
+  REGISTER: { root: `/auth/register` as const },
   CONTACT: {
     LIST: {
-      root: `contacts/list` as const,
+      root: `/contacts/list` as const,
     },
     DETAILS: (id: string | number) => {
-      return { root: `contacts/${id}` as const }
+      return { root: `/contacts/${id}` as const }
     },
     ADD: {
-      root: `contacts/add` as const,
+      root: `/contacts/add` as const,
     },
     DELETE: (id: string | number) => {
-      return { root: `contacts/delete/${id}` as const }
+      return { root: `/contacts/delete/${id}` as const }
     },
     UPDATE: (id: number) => {
-      return { root: `contacts/update/${id}` as const }
+      return { root: `/contacts/update/${id}` as const }
     },
   },
 }

@@ -1,9 +1,8 @@
 import { getAPIResponse } from "@utils/helpers/misc"
-import { redirect } from "@utils/helpers/redirect"
 import { PATHS } from "app/(module)/router.config"
 
 
-interface LoginUserParams {
+export interface LoginUserParams {
   email: string
   password: string
 }
@@ -13,7 +12,7 @@ interface LoginUserParams {
  */
 export const loginAuthUser = async ({ email, password }: LoginUserParams) => {
   try {
-    const { status_code, user, token } = await getAPIResponse(
+    const { status_code, user, token, message } = await getAPIResponse(
       process.env.NEXT_PUBLIC_SITE_URL!,
       PATHS.LOGIN.root,
       "",
@@ -22,13 +21,13 @@ export const loginAuthUser = async ({ email, password }: LoginUserParams) => {
     )
 
     if (status_code < 200 || status_code >= 400) {
-      throw Error("Failed to login", { cause: status_code })
+      return { status_code: status_code, message: message }
     }
 
     return { status_code, user, token }
   } catch (err) {
     console.error(err)
 
-    return redirect((err as Error).cause as number) // tsq does not take undefine i.e. return undefined / return void / empty
+    return { status_code: 500, message: "Server" } // tsq does not take undefine i.e. return undefined / return void / empty
   }
 }

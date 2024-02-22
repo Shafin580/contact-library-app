@@ -1,4 +1,4 @@
-import Spinner from "@library/Spinner"
+import Spinner from "./components/global/Spinner"
 
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "/app/components/library/scss/library-index";
+@import "./scss/custom-scss/library-index";
 @import "./scss/type";
 
 * {

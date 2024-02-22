@@ -1,10 +1,11 @@
+import LoginForm from "app/components/global/Form/Auth/LoginForm.Client"
 import { Metadata } from "next"
 
 /**
  * * Metadata for current page
  */
 const TITLE = {
-  absolute: `${process.env.NEXT_PUBLIC_SITE_TITLE} | Home`,
+  absolute: `${String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")} | Home`,
 }
 export const metadata: Metadata = {
   title: TITLE,
@@ -27,7 +28,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="flex flex-col">
-        
+        <LoginForm />
       </div>
     </main>
   )

@@ -2,13 +2,11 @@
 
 import { removeAllCookies } from "@utils/helpers/misc"
 import Cookies from "js-cookie"
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
-import { Dispatch, ReactNode, SetStateAction, createContext, useCallback, useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import { ReactNode, createContext, useCallback, useEffect, useState } from "react"
 import { decrypt, encrypt } from "@utils/helpers/crypto"
-import { ModuleListPropsExtended, MODULE_SLUG } from "module.config"
 import { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies"
 import { AppLoader, AppLoaderProps } from "@components/AppLoader"
-import { APP_PERMISSIONS } from "module.config"
 
 /**
  * A variable that controls encryption of the sensitive info on production environment
@@ -38,8 +36,9 @@ export const MANDATORY_COOKIES = [
 
 // + User info properties
 export interface UserInfoContextProps {
+  id: number
   email: string
-  token: string
+  username: string
 }
 
 // + App context properties
@@ -150,25 +149,6 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     const cookieUserInfo = parseCookieUserInfo()
     updateContextUserInfo(cookieUserInfo)
   }, [])
-
-  // + selected module index mapper
-  /**
-   * Function that returns the selected module index based on the current URI
-   */
-  const getSelectedModuleIndexFromURI = () => {
-    const currentModuleSlug = pathName!.split("/")[1]
-
-    // return Object.values(MODULE_SLUG).findIndex((val) => val == currentModuleSlug)
-
-    // if (currentModuleSlug === MODULE_SLUG.AGGREGATION_VFM) return 0
-    // if (currentModuleSlug === MODULE_SLUG.DATA) return 2
-    if (currentModuleSlug === MODULE_SLUG.MODULE_ONE) return 1
-    // if (currentModuleSlug === MODULE_SLUG.KNOWLEDGE_LIBRARY) return 3
-    // if (currentModuleSlug === MODULE_SLUG.RESEARCH) return 3
-    // if (currentModuleSlug === MODULE_SLUG.SETTINGS) return currentSelectedModuleIndex
-
-    return 0
-  }
 
   return (
     <AppContext.Provider
