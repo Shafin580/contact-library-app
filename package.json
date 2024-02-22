@@ -133,14 +133,20 @@
     "zustand": "4.4.4",
     "tailwind-cn": "1.0.2",
     "tailwind-merge": "2.2.0",
-    "tailwindcss-animated": "^1.0.1"
-  },
-  "devDependencies": {
-    "@faker-js/faker": "8.3.1",
+    "tailwindcss-animated": "^1.0.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tanstack/eslint-plugin-query": "5.17.7",
     "@tanstack/react-query-devtools": "5.17.18",
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "cz-customizable": "7.0.0",
+    "d3-time-format": "4.1.0",
+    "dotenv": "16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "8.3.1",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/archiver": "6.0.2",
     "@types/dompurify": "3.0.5",
@@ -162,11 +168,6 @@
     "@types/uuid": "9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
-    "boxen": "^7.1.1",
-    "chalk": "^5.3.0",
-    "cz-customizable": "7.0.0",
-    "d3-time-format": "4.1.0",
-    "dotenv": "16.3.1",
     "eslint": "^8.x",
     "eslint-config-next": "14.0.4",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -175,7 +176,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "inquirer": "^9.2.12",
     "lint-staged": "^15.2.0",
-    "node-fetch": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "prettier-quick": "^0.0.5"
   }
