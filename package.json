@@ -136,7 +136,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "8.3.1",
-    "@next/bundle-analyzer": "^14.0.4",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tanstack/eslint-plugin-query": "5.17.7",

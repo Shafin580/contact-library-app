@@ -3,10 +3,6 @@
 const path = require("path")
 const isProd = process.env.NODE_ENV === "production"
 const apiURL = String(process.env.API_URL)
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "false",
-  // openAnalyzer: false,
-})
 
 const nextConfig = {
   experimental: {
@@ -116,4 +112,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withBundleAnalyzer(nextConfig)
+module.exports = nextConfig
