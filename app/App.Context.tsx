@@ -153,7 +153,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   return (
     <AppContext.Provider
       value={{
-        SITE_URL: (process.env.NEXT_PUBLIC_SITE_URL as string).replace("external", ""),
+        SITE_URL: (process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", ""),
         token: userToken,
         userInfo,
         login,

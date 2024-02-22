@@ -13,7 +13,7 @@ export interface LoginUserParams {
 export const loginAuthUser = async ({ email, password }: LoginUserParams) => {
   try {
     const { status_code, user, token, message } = await getAPIResponse(
-      process.env.NEXT_PUBLIC_SITE_URL!,
+      String(process.env.NEXT_PUBLIC_SITE_URL),
       PATHS.LOGIN.root,
       "",
       "POST",
@@ -28,6 +28,6 @@ export const loginAuthUser = async ({ email, password }: LoginUserParams) => {
   } catch (err) {
     console.error(err)
 
-    return { status_code: 500, message: "Server" } // tsq does not take undefine i.e. return undefined / return void / empty
+    return { status_code: 500, message: "Server Error" } // tsq does not take undefine i.e. return undefined / return void / empty
   }
 }

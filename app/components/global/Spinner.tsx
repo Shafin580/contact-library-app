@@ -13,12 +13,6 @@ export interface SpinnerProps {
 /**
  * Spinner Component
  *
- * @description
- * Company - ARITS Ltd.
- * This component is used to render an Spinner from the sprite file.
- * The SpinnerName prop is used to determine which Spinner to render.
- * Developed using the Untitled UI Icon library.
- *
 @property {string} variant Button color variant: primary, secondary, success, warning, danger, info
 @property {string} size Use numeric values
 @property {string} trackColor Choose between 'light' and 'dark'

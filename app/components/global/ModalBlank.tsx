@@ -19,11 +19,6 @@ export interface ModalBlankProps {
 /**
  * Modal Component
  *
- * @description
- * Company - ARITS Ltd.
- * This component is used to render an Modal from the sprite file.
- * Developed using the Untitled UI Icon library.
- *
 @param {boolean} showBackdrop — Show or hide the modal backdrop ==> True by default
 @param {any} children — Wraps the children in the parent
 @param {string} modalSize — Size of the Modal: 'sm' | 'md' | 'lg' | 'full'

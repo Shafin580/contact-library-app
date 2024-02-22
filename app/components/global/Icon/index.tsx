@@ -15,13 +15,6 @@ export interface IconProps {
 
 /**
  * Icon Component
- *
- * @description
- * Company - ARITS Ltd.
- * This component is used to render an icon from the sprite file.
- * The iconName prop is used to determine which icon to render.
- * Developed using the Untitled UI Icons library.
- *
  * @param {string} iconName Use icon sprite file: untitled-ui-sprite.svg
  * @param {string} iconSize Use pixel values
  * @param {string} iconColor Use hex colors

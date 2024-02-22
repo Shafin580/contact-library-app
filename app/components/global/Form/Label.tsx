@@ -14,9 +14,6 @@ export interface LabelProps {
 
 /**
  * Label Component
- *
- * @description
- * Company - ARITS Ltd.
 /**
  * Interface representing the properties of a label component.
  * @property {string} [text] - The text content of the label.

@@ -5,7 +5,7 @@ import Register from "./Register.client"
  * * Metadata for current page
  */
 const TITLE = {
-  absolute: `${String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")} | register`,
+  absolute: `${(process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")} | register`,
 }
 export const metadata: Metadata = {
   title: TITLE,

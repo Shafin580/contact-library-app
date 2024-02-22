@@ -69,15 +69,6 @@ interface ToastParams {
 export type ToastProps = ToastParams &
   ({ message?: never; children: React.ReactNode } | { message: string; children?: never })
 
-/**
- * @description
- * This component is used to render a Toast message in the DOM. For implementation,
- * use the `renderToast` function in `Toast/Context.tsx`
- *
- * @copyright ARITS Limited
- * - Courtesy: [@emranffl](https://www.linkedin.com/in/emranffl/)
- */
-
 const Toast = memo(function Toast({
   message,
   children = undefined,

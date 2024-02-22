@@ -8,12 +8,12 @@ const TITLE = {
    * `title.template` can be used to add a prefix or a suffix
    * to title's defined in child route segments
    */
-  template: `%s | ${String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")}`,
+  template: `%s | ${(process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")}`,
   /**
    * `title.default` can be used to provide a fallback title
    * to child route segments that don't define a title
    */
-  default: `${String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")}`,
+  default: `${(process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")}`,
 }
 
 export const SITE_METADATA: Metadata = {
@@ -26,15 +26,15 @@ export const SITE_METADATA: Metadata = {
     "TAF",
     "vulnerabilities women face due to climate change impacts",
   ],
-  metadataBase: new URL(String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")),
+  metadataBase: new URL((process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")),
   openGraph: {
     countryName: "Bangladesh",
     description: DESCRIPTION,
     locale: "en_US",
-    siteName: String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", ""),
+    siteName: (process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", ""),
     title: TITLE,
     type: "website",
-    url: process.env.NEXT_PUBLIC_SITE_URL,
+    url: (process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", ""),
   },
   title: TITLE,
   twitter: {

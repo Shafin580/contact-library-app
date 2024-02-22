@@ -40,7 +40,7 @@ const EXCLUDE_ROUTES = [
 // This function can be marked `async` if using `await` inside
 export default function middleware(request: NextRequest) {
   const RESPONSE = NextResponse.next()
-  const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL as string).replace("/external", "")
+  const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")
   const hasAllCookies = MANDATORY_COOKIES.every((cookie) => request.cookies.has(cookie))
   const currentURLPathname = new URL(request.url).pathname
   const regexFormat = EXCLUDE_ROUTES.map((item) => {

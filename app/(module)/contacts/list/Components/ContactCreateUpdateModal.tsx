@@ -96,6 +96,7 @@ const ContactCreateUpdateModal = ({
             },
           ])
           queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.CONTACT.LIST.key] })
+          onConfirm(false)
         } else {
           updateLoadingStatus(false, undefined)
           renderToast([
@@ -142,6 +143,7 @@ const ContactCreateUpdateModal = ({
           ])
           queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.CONTACT.LIST.key] })
           queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.CONTACT.DYNAMIC(data.id ?? 0).key] })
+          onConfirm(false)
         } else {
           updateLoadingStatus(false, undefined)
           renderToast([

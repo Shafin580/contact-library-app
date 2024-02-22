@@ -9,9 +9,6 @@ export interface ErrorTextProps {
 /**
  * Error Text for Form Fields
  *
- * @description
- * Company - ARITS Ltd. 4th Jan 2023
- *
  * This component is used to render an error text on a form field
  * @param {string}  text The error text
  * @param {string}  className The class of the error text

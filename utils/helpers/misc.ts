@@ -316,3 +316,17 @@ export const removeAllCookies = () => {
     Cookies.remove(cookieName)
   }
 }
+
+export const tableURLWithParams = (basePath: string, apiPath: string, token: string) => {
+  console.log(basePath + apiPath)
+  return {
+    apiUrl: `${basePath}${apiPath}`,
+    headerOptions: {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: String(token),
+      },
+    },
+  }
+}

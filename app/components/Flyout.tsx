@@ -23,10 +23,6 @@ export interface NotificationItemsProps {
 
 /**
  * @name Flyout
- * @description
- * * Company - ARITS Ltd. 4th Jan 2023.
- * This component is used to render a Flyout.
- * The flyout can be used to render list.
  * @param {string} className CSS class name to be applied to the flyout parent div
  * @param {boolean} isRowEnd CSS class name to be applied to the flyout parent if the flyout is at the most right side of the screen
  * @param {boolean} isOpen is to open or close the flyout

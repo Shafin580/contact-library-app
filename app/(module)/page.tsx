@@ -5,7 +5,7 @@ import { Metadata } from "next"
  * * Metadata for current page
  */
 const TITLE = {
-  absolute: `${String(process.env.NEXT_PUBLIC_SITE_URL).replace("/external", "")} | Home`,
+  absolute: `${(process.env.NEXT_PUBLIC_SITE_URL as string).replace("external/", "")} | Home`,
 }
 export const metadata: Metadata = {
   title: TITLE,

@@ -19,7 +19,7 @@ export const LINKS = {
  */
 
 export const PATHS = {
-  LOGIN: { root: `/auth/login` as const },
+  LOGIN: { root: `auth/login` as const },
   REGISTER: { root: `/auth/register` as const },
   CONTACT: {
     LIST: {

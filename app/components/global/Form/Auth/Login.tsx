@@ -44,22 +44,6 @@ export interface logInFormInterface {
 
 /**
  * LogIn Component
- *
- * @description
- * Company - ARITS Ltd. 20 Feb Jan 2023.
-
-* This component is used to render a LogIn form
-* This component has default validation only for email and password.But if needed custom    validation can be added.
-*Initially default validation is set false.For default validation 'defaultValidation(boolean)'  param needs to true in parent component.
- *For custom validation,'defaultValidation(boolean)' can't be called in parent component.'onTextInputChange' will return the value of textInput(email/username) firing onChange event of react in parent component.Using the value of 'onTextInputChange',validation can be done.
- * 'errorTextInput' this attribute accept the value from parent component and shows the value of
- textInput(email/username).if validation returns error,'errorTextInput' has to be set from parent
- component with the response of validation from parent component
- *'onPasswordChange' will return the value of password firing onChange event of react in parent component.Using the value of 'onPasswordChange',validation can be done.
- * 'errorTextPassword' this attribute accept the value from parent component and shows the value of password.if validation returns error,'errorTextPassword' has to be set from parent
- component with the response of validation from parent component
- * Please note,  require('@tailwindcss/forms'), is required in the tailwind.config.js file.
- * for this component to work.
     @param {FormItemResponseInterface}   onTextInputChange - trigger with onChange event and return the value of text(email/username) in parent component
     @param {FormItemResponseInterface}   onPasswordChange - trigger with onChange event and return the value of password in parent component
     @param {GoogleUserData}   getGoogleUserData - trigger with onChange event and return the value of google user data in parent component

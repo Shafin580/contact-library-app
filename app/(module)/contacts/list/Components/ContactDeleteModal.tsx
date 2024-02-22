@@ -9,11 +9,15 @@ import ModalBlank from "app/components/global/ModalBlank"
 import { ToastContext } from "app/components/global/Toast/Context"
 import { useContext, useState } from "react"
 
-const ContactDeleteModal = (
-  contactId: string | number,
-  onCloseModal: (e: boolean) => void,
+const ContactDeleteModal = ({
+  contactId,
+  onCloseModal,
+  token,
+}: {
+  contactId: string | number
+  onCloseModal: (e: boolean) => void
   token: string
-) => {
+}) => {
   const [showModal, setShowModal] = useState(true)
   const queryClient = useQueryClient()
 

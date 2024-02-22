@@ -401,15 +401,6 @@ export interface TextFieldProps {
 
 /**
  * TextField Component
- *
- * @description
- * Company - ARITS Ltd. 1st Jan 2023.
- * This component is used to render a text field
- * The tab component is capable of showing text, icons and badges with counts.
- * The tab component can have disabled tabs.
- * On click of a tab, the tab index is returned to the parent component.
- * The parent component can then use the index to render the content.
- * Please note,  require('@tailwindcss/forms'), is required in the tailwind.config.js file for this component to work.
  */
 
 const TextField = ({

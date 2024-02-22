@@ -20,9 +20,6 @@ export interface ButtonIconProps {
 }
 
 /**
- * ButtonIcon Component
- * Company - ARITS Ltd. 4th Jan 2023.
- * @description
  *
  * Interface for the props of a button icon component.
  * @interface ButtonIconProps

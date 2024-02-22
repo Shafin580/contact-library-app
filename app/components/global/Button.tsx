@@ -129,10 +129,6 @@ export type ButtonProps =
  * @param {string} [link.rel] - Rel attribute for the link
  * @param {string} [link.id] - ID attribute for the link
  *
- * @author ARITS Ltd.
- * @description
- * - Company - ARITS Ltd. 28th Dec 2022.
- * - Please refer to the _buttons.scss file in under the folder: `scss`>`theme`
  */
 
 const Button = memo(function Button({
