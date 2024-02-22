@@ -37,6 +37,8 @@ const NotFound = () => {
                   width: "350px",
                   height: "350px",
                 }}
+                width={350}
+                height={350}
                 priority
               />
             </div>

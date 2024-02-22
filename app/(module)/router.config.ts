@@ -7,7 +7,7 @@ export const LINKS = {
   HOME: "/" as const,
   REGISTER: "/register" as const,
   CONTACT: {
-    LIST: { home: `/contact/list` as const },
+    LIST: { home: `/contacts/list` as const },
     DYNAMIC: (id: string | number) => {
       return { home: `/contact/${id}` as const }
     },

@@ -22,7 +22,7 @@ const ContactList = () => {
   const { token } = useContext(AppContext)
 
   return (
-    <div>
+    <div className="container">
       <h3 className="text-center text-primary">Contact List</h3>
       <Button btnText="Add New Contact" variant="primary" clicked={() => {setShowCreateModal(true)}} />
       {token != null && (
@@ -54,9 +54,9 @@ const ContactList = () => {
                 <div className="flex flex-row space-x-6">
                   <ButtonIcon
                     clicked={() => {
-                      // setSelectedData(row)
-                      // setShowUpdateModal(true)
-                      console.log("Selected Data", row)
+                      setSelectedData(row.original as ContactListAPIProps)
+                      setShowUpdateModal(true)
+                      console.log("Selected Data", row.original)
                     }}
                     className="mx-auto"
                     iconName="edit-01"
@@ -64,9 +64,9 @@ const ContactList = () => {
 
                   <ButtonIcon
                     clicked={() => {
-                      // setSelectedData(row)
-                      // setShowDeleteModal(true)
-                      console.log("Selected Data", row)
+                      setSelectedData(row.original as ContactListAPIProps)
+                      setShowDeleteModal(true)
+                      console.log("Selected Data", row.original)
                     }}
                     className="mx-auto"
                     iconName="trash-01"

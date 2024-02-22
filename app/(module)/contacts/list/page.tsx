@@ -5,7 +5,7 @@ import ContactList from "./ContactList.Client"
  * * Metadata for current page
  */
 const TITLE = {
-  absolute: `${process.env.NEXT_PUBLIC_SITE_TITLE} | Blogs`,
+  absolute: `${process.env.NEXT_PUBLIC_SITE_URL} | Blogs`,
 }
 export const metadata: Metadata = {
   title: TITLE,
