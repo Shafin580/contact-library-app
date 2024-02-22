@@ -5,8 +5,8 @@ interface CreateUpdateContactParams {
   id?: number
   name: string
   email: string
-  phone_number?: string
-  address?: string
+  phone_number?: string | null
+  address?: string | null
 }
 
 export interface CreateUpdateContactAPIProps {

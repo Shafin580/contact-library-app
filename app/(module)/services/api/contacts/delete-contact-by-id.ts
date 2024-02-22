@@ -15,10 +15,9 @@ export const deleteContact = async ({ id, token }: { id: string | number; token:
 
     if (status_code === 200) {
       return { status_code: status_code, message: message }
-    } else
-      throw Error("Error deleting contact", {
-        cause: status_code,
-      })
+    } else {
+      return {status_code: status_code, message: "Failed to delete Contact!"}
+    }
   } catch (err) {
     console.error(err)
 
