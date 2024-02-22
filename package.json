@@ -130,7 +130,10 @@
     "use-file-upload": "1.0.11",
     "uuid": "9.0.1",
     "xlsx": "0.18.5",
-    "zustand": "4.4.4"
+    "zustand": "4.4.4",
+    "tailwind-cn": "1.0.2",
+    "tailwind-merge": "2.2.0",
+    "tailwindcss-animated": "^1.0.1"
   },
   "devDependencies": {
     "@faker-js/faker": "8.3.1",
@@ -175,8 +178,5 @@
     "node-fetch": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "prettier-quick": "^0.0.5",
-    "tailwind-cn": "1.0.2",
-    "tailwind-merge": "2.2.0",
-    "tailwindcss-animated": "^1.0.1"
   }
 }
