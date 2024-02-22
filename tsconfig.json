@@ -28,7 +28,6 @@
         "name": "next",
       },
     ],
-    "types": ["jest"],
     "baseUrl": "./",
     "paths": {
       "app/*": ["./app/*"],
